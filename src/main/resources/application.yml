@@ -1,12 +1,26 @@
+spring:
+  datasource:
+    password: password
+    platform: postgres
+    url: jdbc:postgresql://localhost:5434/simple
+    username: postgres
+  jpa:
+    database: POSTGRESQL
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    show-sql: true
+
 management:
-  endpoint:
-    health:
-      show-details: always
-      enabled: true
-    prometheus:
-      enabled: true
   endpoints:
-    enabled-by-default: false
+    health:
+      include:
+        show-details: always
     web:
       exposure:
-        include: health,info,prometheus
+        include: "*"

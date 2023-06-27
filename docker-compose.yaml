@@ -6,3 +6,17 @@ services:
     ports:
       - '9090:9090'
     command: --web.enable-lifecycle  --config.file=/etc/prometheus/prometheus.yml
+  postgres:
+    image: postgres:10.5
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+    ports:
+      - '5434:5432'
+    volumes:
+      - c:/postgres-data:/var/lib/postgresql/data
