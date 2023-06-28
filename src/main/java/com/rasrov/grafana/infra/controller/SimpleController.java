@@ -1,7 +1,7 @@
-package controller;
+package com.rasrov.grafana.infra.controller;
 
 import jakarta.validation.Valid;
-import model.Simple;
+import com.rasrov.grafana.infra.model.Simple;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import service.SimpleService;
+import com.rasrov.grafana.infra.service.SimpleService;
 
 import java.util.Optional;
 

@@ -1,6 +1,6 @@
-package repository;
+package com.rasrov.grafana.infra.repository;
 
-import model.Simple;
+import com.rasrov.grafana.infra.model.Simple;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

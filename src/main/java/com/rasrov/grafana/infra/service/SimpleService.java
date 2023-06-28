@@ -1,12 +1,12 @@
-package service;
+package com.rasrov.grafana.infra.service;
 
-import model.Simple;
+import com.rasrov.grafana.infra.model.Simple;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import repository.ISimpleRepository;
+import com.rasrov.grafana.infra.repository.ISimpleRepository;
 
 import java.util.Optional;
 

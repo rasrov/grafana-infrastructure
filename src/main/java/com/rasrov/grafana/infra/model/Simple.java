@@ -1,4 +1,4 @@
-package model;
+package com.rasrov.grafana.infra.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
