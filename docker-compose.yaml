@@ -3,9 +3,13 @@ version: "3.7"
 services:
   prometheus:
     image: prom/prometheus:latest
+    network_mode: host
     ports:
       - '9090:9090'
-    command: --web.enable-lifecycle  --config.file=/etc/prometheus/prometheus.yml
+    volumes:
+      - ./src/main/resources:/etc/prometheus/
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
   postgres:
     image: postgres:10.5
     restart: always
@@ -20,3 +24,10 @@ services:
       - '5434:5432'
     volumes:
       - c:/postgres-data:/var/lib/postgresql/data
+  grafana:
+    image: grafana/grafana-enterprise:latest
+    user: '0'
+    ports:
+      - 3000:3000
+    volumes:
+      -  c:/grafana-data:/var/lib/grafana
