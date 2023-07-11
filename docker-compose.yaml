@@ -1,14 +1,6 @@
 version: "3.7"
 
 services:
-  prometheus:
-    image: prom/prometheus:latest
-    ports:
-      - '9090:9090'
-    volumes:
-      - ./src/main/resources:/etc/prometheus/
-    command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
   postgres:
     image: postgres:10.5
     restart: always
@@ -23,10 +15,49 @@ services:
       - '5434:5432'
     volumes:
       - c:/postgres-data:/var/lib/postgresql/data
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - '9090:9090'
+    volumes:
+      - ./src/main/resources/prometheus:/etc/prometheus/
+    command:
+      - '--config.file=/etc/prometheus/prometheus-config.yml'
+
   grafana:
     image: grafana/grafana-enterprise:latest
-    user: '0'
+    restart: always
     ports:
       - 3000:3000
     volumes:
-      -  c:/grafana-data:/var/lib/grafana
+      - ./src/main/resources/grafana:/etc/grafana/provisioning/datasources
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+    networks:
+      - grafana-network
+
+  loki:
+    image: grafana/loki:latest
+    restart: always
+    ports:
+      - "3100:3100"
+    command:
+      - '--config.file=/etc/loki/local-config.yaml'
+    networks:
+      - grafana-network
+
+  promtail:
+    image: grafana/promtail:latest
+    restart: always
+    volumes:
+      - ./src/main/resources/promtail:/etc/promtail/
+      - ./src/main/resources/logs:/var/log
+    command:
+      - '--config.file=/etc/promtail/promtail-config.yml'
+    networks:
+      - grafana-network
+
+networks:
+  grafana-network:

@@ -1,0 +1,83 @@
+[INFO ] 2023-07-11 11:54:12.573 [main]  c.r.g.i.GrafanaInfrastructureApplication - Starting GrafanaInfrastructureApplication using Java 17.0.7 with PID 20112 (C:\Proyectos\own\grafana-infrastructure\target\classes started by Ras in C:\Proyectos\own\grafana-infrastructure)
+[INFO ] 2023-07-11 11:54:12.579 [main]  c.r.g.i.GrafanaInfrastructureApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-07-11 11:54:13.345 [main]  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-07-11 11:54:13.407 [main]  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 1 JPA repository interfaces.
+[INFO ] 2023-07-11 11:54:13.908 [main]  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[INFO ] 2023-07-11 11:54:13.916 [main]  o.a.c.c.StandardService - Starting service [Tomcat]
+[INFO ] 2023-07-11 11:54:13.917 [main]  o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.10]
+[INFO ] 2023-07-11 11:54:14.005 [main]  o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2023-07-11 11:54:14.006 [main]  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1393 ms
+[DEBUG] 2023-07-11 11:54:14.240 [main]  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-07-11 11:54:14.253 [main]  o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-07-11 11:54:14.304 [main]  o.h.Version - HHH000412: Hibernate ORM core version 6.2.5.Final
+[INFO ] 2023-07-11 11:54:14.307 [main]  o.h.c.Environment - HHH000406: Using bytecode reflection optimizer
+[INFO ] 2023-07-11 11:54:14.411 [main]  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[INFO ] 2023-07-11 11:54:14.534 [main]  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO ] 2023-07-11 11:54:14.553 [main]  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-07-11 11:54:14.639 [main]  c.z.h.p.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@474ce6b8
+[INFO ] 2023-07-11 11:54:14.640 [main]  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-07-11 11:54:14.857 [main]  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[INFO ] 2023-07-11 11:54:15.322 [main]  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[DEBUG] 2023-07-11 11:54:15.333 [main]  o.h.SQL - drop table if exists simple cascade
+[WARN ] 2023-07-11 11:54:15.337 [main]  o.h.e.j.s.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+[WARN ] 2023-07-11 11:54:15.337 [main]  o.h.e.j.s.SqlExceptionHelper - table "simple" does not exist, skipping
+[DEBUG] 2023-07-11 11:54:15.337 [main]  o.h.SQL - drop sequence if exists simple_seq
+[WARN ] 2023-07-11 11:54:15.338 [main]  o.h.e.j.s.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+[WARN ] 2023-07-11 11:54:15.339 [main]  o.h.e.j.s.SqlExceptionHelper - sequence "simple_seq" does not exist, skipping
+[DEBUG] 2023-07-11 11:54:15.342 [main]  o.h.SQL - create sequence simple_seq start with 1 increment by 50
+[DEBUG] 2023-07-11 11:54:15.393 [main]  o.h.SQL - create table simple (id bigint not null, description varchar(255), primary key (id))
+[INFO ] 2023-07-11 11:54:15.414 [main]  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[DEBUG] 2023-07-11 11:54:15.490 [main]  o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
+[DEBUG] 2023-07-11 11:54:15.523 [main]  o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
+[DEBUG] 2023-07-11 11:54:15.582 [main]  o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
+[WARN ] 2023-07-11 11:54:15.666 [main]  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-07-11 11:54:16.074 [main]  o.s.b.a.e.w.EndpointLinksResolver - Exposing 14 endpoint(s) beneath base path '/actuator'
+[INFO ] 2023-07-11 11:54:16.163 [main]  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[INFO ] 2023-07-11 11:54:16.174 [main]  c.r.g.i.GrafanaInfrastructureApplication - Started GrafanaInfrastructureApplication in 3.904 seconds (process running for 4.541)
+[INFO ] 2023-07-11 11:54:18.919 [http-nio-8080-exec-1]  o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2023-07-11 11:54:18.920 [http-nio-8080-exec-1]  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2023-07-11 11:54:18.921 [http-nio-8080-exec-1]  o.s.w.s.DispatcherServlet - Completed initialization in 1 ms
+[INFO ] 2023-07-11 11:58:53.668 [SpringApplicationShutdownHook]  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[DEBUG] 2023-07-11 11:58:53.669 [SpringApplicationShutdownHook]  o.h.SQL - drop table if exists simple cascade
+[DEBUG] 2023-07-11 11:58:53.692 [SpringApplicationShutdownHook]  o.h.SQL - drop sequence if exists simple_seq
+[INFO ] 2023-07-11 11:58:53.716 [SpringApplicationShutdownHook]  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-07-11 11:58:53.718 [SpringApplicationShutdownHook]  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-07-11 11:59:18.269 [main]  c.r.g.i.GrafanaInfrastructureApplication - Starting GrafanaInfrastructureApplication using Java 17.0.7 with PID 18760 (C:\Proyectos\own\grafana-infrastructure\target\classes started by Ras in C:\Proyectos\own\grafana-infrastructure)
+[INFO ] 2023-07-11 11:59:18.276 [main]  c.r.g.i.GrafanaInfrastructureApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-07-11 11:59:19.255 [main]  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-07-11 11:59:19.327 [main]  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 1 JPA repository interfaces.
+[INFO ] 2023-07-11 11:59:19.940 [main]  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[INFO ] 2023-07-11 11:59:19.948 [main]  o.a.c.c.StandardService - Starting service [Tomcat]
+[INFO ] 2023-07-11 11:59:19.948 [main]  o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.10]
+[INFO ] 2023-07-11 11:59:20.026 [main]  o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2023-07-11 11:59:20.026 [main]  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1712 ms
+[DEBUG] 2023-07-11 11:59:20.247 [main]  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-07-11 11:59:20.265 [main]  o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-07-11 11:59:20.315 [main]  o.h.Version - HHH000412: Hibernate ORM core version 6.2.5.Final
+[INFO ] 2023-07-11 11:59:20.318 [main]  o.h.c.Environment - HHH000406: Using bytecode reflection optimizer
+[INFO ] 2023-07-11 11:59:20.428 [main]  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[INFO ] 2023-07-11 11:59:20.546 [main]  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO ] 2023-07-11 11:59:20.561 [main]  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-07-11 11:59:20.681 [main]  c.z.h.p.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@70f5f59d
+[INFO ] 2023-07-11 11:59:20.682 [main]  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-07-11 11:59:20.896 [main]  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[INFO ] 2023-07-11 11:59:21.302 [main]  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[DEBUG] 2023-07-11 11:59:21.311 [main]  o.h.SQL - drop table if exists simple cascade
+[WARN ] 2023-07-11 11:59:21.316 [main]  o.h.e.j.s.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+[WARN ] 2023-07-11 11:59:21.317 [main]  o.h.e.j.s.SqlExceptionHelper - table "simple" does not exist, skipping
+[DEBUG] 2023-07-11 11:59:21.317 [main]  o.h.SQL - drop sequence if exists simple_seq
+[WARN ] 2023-07-11 11:59:21.318 [main]  o.h.e.j.s.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+[WARN ] 2023-07-11 11:59:21.318 [main]  o.h.e.j.s.SqlExceptionHelper - sequence "simple_seq" does not exist, skipping
+[DEBUG] 2023-07-11 11:59:21.322 [main]  o.h.SQL - create sequence simple_seq start with 1 increment by 50
+[DEBUG] 2023-07-11 11:59:21.353 [main]  o.h.SQL - create table simple (id bigint not null, description varchar(255), primary key (id))
+[INFO ] 2023-07-11 11:59:21.369 [main]  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[DEBUG] 2023-07-11 11:59:21.439 [main]  o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
+[DEBUG] 2023-07-11 11:59:21.476 [main]  o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
+[DEBUG] 2023-07-11 11:59:21.530 [main]  o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
+[WARN ] 2023-07-11 11:59:21.619 [main]  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-07-11 11:59:22.046 [main]  o.s.b.a.e.w.EndpointLinksResolver - Exposing 14 endpoint(s) beneath base path '/actuator'
+[INFO ] 2023-07-11 11:59:22.127 [main]  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[INFO ] 2023-07-11 11:59:22.140 [main]  c.r.g.i.GrafanaInfrastructureApplication - Started GrafanaInfrastructureApplication in 4.256 seconds (process running for 4.957)
+[INFO ] 2023-07-11 11:59:22.682 [http-nio-8080-exec-1]  o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2023-07-11 11:59:22.682 [http-nio-8080-exec-1]  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2023-07-11 11:59:22.683 [http-nio-8080-exec-1]  o.s.w.s.DispatcherServlet - Completed initialization in 1 ms

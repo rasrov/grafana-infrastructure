@@ -16,6 +16,20 @@ spring:
             non_contextual_creation: true
     show-sql: true
 
+logging:
+  level:
+    org:
+      springframework:
+        orm:
+          jpa: DEBUG
+        transaction: DEBUG
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+
 management:
   endpoints:
     health:
